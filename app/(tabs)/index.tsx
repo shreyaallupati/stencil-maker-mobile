@@ -102,7 +102,7 @@ export default function StencilMakerScreen() {
     const [heightIn, setHeightIn] = useState(3);
     const [orientation, setOrientation] = useState('portrait');
     const [addMargins, setAddMargins] = useState('no');
-    const [unit, setUnit] = useState('cm');
+    const [unit, setUnit] = useState('');
     const [marginUnit, setMarginUnit] = useState('cm');
     const [marginX, setMarginX] = useState(5); // Left/Right
     const [marginY, setMarginY] = useState(5); // Top/Bottom
@@ -313,7 +313,8 @@ export default function StencilMakerScreen() {
 
             <Text style={styles.label}>System</Text>
             <View style={styles.pickerWrapper}>
-                <Picker selectedValue={unit} onValueChange={setUnit}>
+                <Picker selectedValue={unit} onValueChange={setUnit} style={{color: '#1a1a1a'}} itemStyle={{color: '#1a1a1a'}}>
+                    <Picker.Item label="not selected" value="" />
                     <Picker.Item label="Metric (cm)" value="cm" />
                     <Picker.Item label="Imperial ft/inch" value="ft" />
                 </Picker>
@@ -338,7 +339,7 @@ export default function StencilMakerScreen() {
 
             <Text style={styles.label}>Add White Margins?</Text>
             <View style={styles.pickerWrapper}>
-                <Picker selectedValue={addMargins} onValueChange={setAddMargins}>
+                <Picker selectedValue={addMargins} onValueChange={setAddMargins} style={{color: '#1a1a1a'}} itemStyle={{color: '#1a1a1a'}}>
                     <Picker.Item label="No" value="no" />
                     <Picker.Item label="Yes, add border" value="yes" />
                 </Picker>
@@ -349,7 +350,7 @@ export default function StencilMakerScreen() {
                     {/* <View style={styles.grid}> */}
                         <Text style={styles.label}>System</Text>
                         <View style={styles.pickerWrapper}>
-                            <Picker selectedValue={marginUnit} onValueChange={setMarginUnit}>
+                            <Picker selectedValue={marginUnit} onValueChange={setMarginUnit} style={{color: '#1a1a1a'}} itemStyle={{color: '#1a1a1a'}}>
                                 <Picker.Item label="Metric (cm)" value="cm" />
                                 <Picker.Item label="Imperial ft/inch" value="ft" />
                             </Picker>
@@ -378,7 +379,7 @@ export default function StencilMakerScreen() {
 
             <Text style={styles.label}>Filter Type</Text>
             <View style={styles.pickerWrapper}>
-                <Picker selectedValue={filter} onValueChange={setFilter}>
+                <Picker selectedValue={filter} onValueChange={setFilter} style={{color: '#1a1a1a'}} itemStyle={{color: '#1a1a1a'}}>
                     <Picker.Item label="Color" value="color" />
                     <Picker.Item label="B&W" value="bw" />
                     <Picker.Item label="Outline" value="outline" />
@@ -387,7 +388,7 @@ export default function StencilMakerScreen() {
 
             <Text style={styles.label}>Orientation</Text>
             <View style={styles.pickerWrapper}>
-                <Picker selectedValue={orientation} onValueChange={setOrientation}>
+                <Picker selectedValue={orientation} onValueChange={setOrientation} style={{color: '#1a1a1a'}} itemStyle={{color: '#1a1a1a'}}>
                     <Picker.Item label="Potrait" value="potrait" />
                     <Picker.Item label="Landscape" value="landscape" />
                 </Picker>
